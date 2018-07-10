@@ -1,0 +1,30 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+	{% csrf_token %}
+	<div class="row mt-5">
+			<nav aria-label="breadcrumb" class="col-md-12">
+			  <ol class="breadcrumb">
+			    <li class="breadcrumb-item"><a href="{% url 'articles' %}">Home</a></li>
+			    <li class="breadcrumb-item active" aria-current="page">Library</li>
+			  </ol>
+			</nav>
+	</div>
+	<div class="container">
+		<form class="">
+			<div class="text-weight-bold mb-5">
+				<label for="title" >Title:</label><br>
+				{{ form.title}}
+			</div>
+			<div class="text-weight-bold ">
+				<label for="Text">Text:</label><br>
+				{{ form.text }}
+			</div>
+			<div>
+				<textarea>
+					
+				</textarea>
+			</div>
+		</form>
+	</div>
+{% endblock %}

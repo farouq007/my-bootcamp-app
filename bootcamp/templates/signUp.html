@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-30">
+    <div class="py-5 text-center">
+      <h2>Sign Up</h2>
+    </div>
+        <div class="col-md-6 order-md-1 offset-md-3">
+      <form method="POST" role="form">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-12 mb-3 ">
+            <label for="first_name">First name</label>
+            {{form.first_name}}
+          </div>
+          <div class="col-md-12 mb-3 ">
+            <label for="last_name">Last name</label>
+            {{form.last_name}}
+          </div>
+          <div class="col-md-12 mb-3  ">
+            <label for="username">Username</label>
+              {{form.username}}
+              {{ form.username.errors }}
+          </div>
+
+          <div class="col-md-12 mb-3 ">
+            <label for="password1">Password
+            <span style="margin-left:400px;" onmouseover="showPassword()" onmouseleave="hidePassword()">show</span></label>
+            {{form.password1}}
+            {{ form.password1.errors }}
+          </div>
+
+          <div class="col-md-12 mb-3 ">
+            
+            <label for="password2">Retype Password</label>
+            {{form.password2}}
+            {{ form.password2.errors }}
+          </div>
+
+          <div class="col-md-12 mb-3 ">
+            <label for="email">Email</label>
+            {{form.email}}
+            </div>
+          <div class="col-md-12 mb-3 ">
+            <label for="email">Address</label>
+            {{form.address}}
+          </div>
+          <div class="col-md-12 mb-5">
+            <button class="btn btn-outline-success btn-lg btn-block" type="submit">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

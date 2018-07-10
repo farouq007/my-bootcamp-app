@@ -1,0 +1,28 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<div class="container">
+	<div class="row">
+	<div class="col-md-8">
+		<h3 class="col-md-6">Feeds</h3>
+		<hr>
+		<ul class="list-group">
+			{% for feed in feeds_list %}
+				<li class="list-group-item justify-content-between">
+				 	{{ feed.status }}
+				<p class="badge badge-secondary badge-pill"></p>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="col-md-4">
+		<div class="card-header">Update your feeds</div>
+		<form id="myForm" name="myFormName" method="POST" >
+        {% csrf_token %}
+        {{ form.as_p }}
+		<button type="submit" class="btn-primary btn-sm ">Submit</button>
+	</form>
+	</div>
+	</div>
+</div>
+{% endblock %}
